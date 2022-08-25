@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 객체</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+        const str1 = '안녕하세요. javascript';
+        console.log(str1.length);
+
+        console.log(str1.indexOf('j')); //7
+        console.log(str1.indexOf('java'));
+        console.log(str1.indexOf('Java'));
+        // -1 > 대소문자를 구별함. 찾지 못했을 경우 -1을 리턴
+
+        console.log(str1.indexOf('a')); // 중복될 경우 먼저나오는 문자
+        console.log(str1.lastIndexOf('a')); // 10 / 뒤에서부터 탐색
+
+        console.log(str1.charAt(7));
+
+        console.log(str1.includes('Java')); // 존재하는지(대소문자 구별함)
+        console.log(str1.includes('java'));
+
+        console.log(str1.substring(7));
+        // 해당 인덱스부터 끝까지 출력
+        console.log(str1.substring(7, 11));
+        // 인덱스 7부터 11까지 출력
+
+        console.log(str1.substr(7, 4));
+        // 인덱스 7부터 글자수(4)
+
+        const str2 = "드라이브,영화감상,게임,쇼핑,잠자기,여행";
+        const hobby = str2.split(','); //배열
+        /*
+            hobby[0] = "드라이브";
+            hobby[1] = "영화감상";
+            hobby[2] = "게임";
+            hobby[3] = "쇼핑";
+            hobby[4] = "잠자기";
+            hobby[5] = "여행";
+        */
+
+        for (let h of hobby) {
+            console.log(h);
+        }
+
+        hobby.forEach(function (val, idx, arr) {
+            console.log(`값:${val}, 인덱스:${idx}, 배열:${arr}`);
+        })
+
+        console.log(str1);
+        console.log(str1.replace('안녕하세요.', 'HELLO!')); // 텍스트 교체
+
+        const str3 = '     javascript     ';
+        console.log(`|${str3}|`);
+        console.log(`|${str3.trim()}|`); // 공백제거
+
+        console.log(str3.toLowerCase()); // 소문자
+        console.log(str3.toUpperCase()); // 대문자
+    </script>
+</body>
+
+</html>
